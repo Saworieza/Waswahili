@@ -1,0 +1,27 @@
+<%# From the way ihub is designed here i dont think this will be necessary. just the index an maybe the edit and delet actions%>
+<p id="notice"><%= notice %></p>
+<p>
+	<%= image_tag @team.image.url(:medium) %>
+</p>
+<p>
+  <strong>Name:</strong>
+  <%= @team.name %>
+</p>
+
+<p>
+  <strong>Position:</strong>
+  <%= @team.position %>
+</p>
+
+<p>
+  <strong>Twitter:</strong>
+  <%= @team.twitter %>
+</p>
+
+<p>
+  <strong>About:</strong>
+  <%= @team.about %>
+</p>
+
+<%= link_to 'Edit', edit_team_path(@team) %> |
+<%= link_to 'Back', teams_path %>

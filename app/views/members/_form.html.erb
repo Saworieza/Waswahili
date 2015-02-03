@@ -1,0 +1,46 @@
+<%= form_for @member, :html => { :multipart => true } do |f| %>
+  <% if @member.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@member.errors.count, "error") %> prohibited this member from being saved:</h2>
+
+      <ul>
+      <% @member.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :image %><br>
+    <%= f.file_field :image %>
+  </div>
+
+  <div class="field">
+    <%= f.label :first_name %><br>
+    <%= f.text_field :first_name %>
+  </div>
+  <div class="field">
+    <%= f.label :last_name %><br>
+    <%= f.text_field :last_name %>
+  </div>
+  <div class="field">
+    <%= f.label :technical_bucket %><br>
+    <%= f.text_field :technical_bucket %>
+  </div>
+  <div class="field">
+    <%= f.label :about %><br>
+    <%= f.text_field :about %>
+  </div>
+  <div class="field">
+    <%= f.label :residence %><br>
+    <%= f.text_field :residence %>
+  </div>
+  <div class="field">
+    <%= f.label :nationality %><br>
+    <%= f.text_field :nationality %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

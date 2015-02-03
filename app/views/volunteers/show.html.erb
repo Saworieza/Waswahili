@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+<p>
+	<%= image_tag @volunteer.image.url(:medium) %>
+</p>
+<p>
+  <strong>Name:</strong>
+  <%= @volunteer.name %>
+</p>
+
+<p>
+  <strong>Position:</strong>
+  <%= @volunteer.position %>
+</p>
+
+<p>
+  <strong>Twitter:</strong>
+  <%= @volunteer.twitter %>
+</p>
+
+<p>
+  <strong>About:</strong>
+  <%= @volunteer.about %>
+</p>
+
+<%= link_to 'Edit', edit_volunteer_path(@volunteer) %> |
+<%= link_to 'Back', volunteers_path %>

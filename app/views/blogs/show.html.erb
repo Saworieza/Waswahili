@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+<%= image_tag @blog.image.url(:large) %>
+<p>
+  <h2><%= @blog.title %></h2>
+</p>
+
+<p>
+  <%= @blog.content %>
+</p>
+<%# Of course comments will have to be approved first by the posts owner for them to be viewed.Write the algorithm for that %>
+<p>
+	<h3><%= @blog.comments.count %> Comments</h3>
+	<%= render @blog.comments %>
+
+	<h4> Add a Comment</h4>
+	<%= render "comments/form" %>
+</p>
+
+
+<%= link_to 'Edit', edit_blog_path(@blog) %> |
+<%= link_to 'Back', blogs_path %>

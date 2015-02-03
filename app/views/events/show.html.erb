@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+<%= image_tag @event.image.url(:large) %>
+<p>
+  <strong>Name:</strong>
+  <%= @event.name %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @event.location %>
+</p>
+
+<p>
+  <strong>About:</strong>
+  <%= @event.about %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @event.date %>
+</p>
+
+<p>
+  <strong>Start:</strong>
+  <%= @event.start %>
+</p>
+
+<p>
+  <strong>End:</strong>
+  <%= @event.end %>
+</p>
+
+<p>
+  <strong>Charge:</strong>
+  <%= @event.charge %>
+</p>
+
+<%= link_to 'Edit', edit_event_path(@event) %> |
+<%= link_to 'Back', events_path %>

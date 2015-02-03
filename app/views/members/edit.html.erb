@@ -1,0 +1,6 @@
+<h1>Editing member</h1>
+<%= image_tag @member.image.url(:large) %>
+<%= render 'form' %>
+
+<%= link_to 'Show', @member %> |
+<%= link_to 'Back', members_path %>

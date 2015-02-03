@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+<%= image_tag @member.image.url(:medium) %>
+<p>
+  <strong>First name:</strong>
+  <%= @member.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @member.last_name %>
+</p>
+
+<p>
+  <strong>Technical bucket:</strong>
+  <%= @member.technical_bucket %>
+</p>
+
+<p>
+  <strong>About:</strong>
+  <%= @member.about %>
+</p>
+
+<p>
+  <strong>Residence:</strong>
+  <%= @member.residence %>
+</p>
+
+<p>
+  <strong>Nationality:</strong>
+  <%= @member.nationality %>
+</p>
+
+<%= link_to 'Edit', edit_member_path(@member) %> |
+<%= link_to 'Back', members_path %>
