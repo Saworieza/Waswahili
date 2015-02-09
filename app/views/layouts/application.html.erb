@@ -7,16 +7,25 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+	
 	<p class="navbar-text pull-right">
+	<nav><%#later on move them maybe?%>
+		<%= link_to 'Home', root_path %>
+		<%= link_to 'Team', teams_path %>
+		<%= link_to 'Community', members_path %>
+		<%= link_to 'Events', events_path %>
+		<%= link_to 'Jobs', jobs_path %>
+		<%= link_to 'Rolodex', root_path %><%# essentially its a section taht deals with comapies. more info later%>
+		<%= link_to 'Blog', blogs_path %> | 
+	
 	<% if user_signed_in? %>
-  		Logged in as <strong><%= current_user.email %></strong>.
-  		<%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
+  		<strong><%= link_to (current_user.email), edit_user_registration_path  %></strong> |
   		<%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
 	<% else %>
   		<%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
   		<%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
 	<% end %>
+	</nav>
 	</p>
 	<p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
