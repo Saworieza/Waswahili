@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 gem 'bootstrap-sass', '~> 3.3.3'
+gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 gem 'devise'
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 gem 'acts_as_votable', '~> 0.10.0'
