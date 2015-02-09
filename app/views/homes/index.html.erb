@@ -1,0 +1,57 @@
+<h3>Swahili Box Stats</h3>
+<p>
+    <%# some count formula counting all events and then giving a number and linking to =>%><%= link_to "Total Events"%><br>
+    <%# some count formula counting all jobs and then giving a number and linking to =>%><%= link_to "Total Jobs"%><br>
+    <%# some count formula counting all members and then giving a number and linking to =>%><%= link_to "Total Members"%><br>
+    <%# some count formula counting all companies and then giving a number and linking to =>%><%= link_to "Total companies"%><br>
+    <%# some count formula counting all posts and then giving a number and linking to =>%><%= link_to "Total Blog Pots"%><br>
+</p>
+<h3><%= link_to 'MEMBERSHIPS', members_path %></h3>
+<h3><%= link_to 'POSTS A JOB', members_path %></h3>
+
+
+<h3>Events Board</h3>
+
+<table>
+  <tbody> <%# as per ihub. there is just the event name and dates and the name is truncated at some point%>
+    <% @events.each do |event| %>
+      <tr>
+        <td><%= link_to (event.name), event %></td>
+        <td><%= event.location %></td>
+        <td><%= event.date %></td><!-- somthing is seriously awful about thsi format, work on it-->
+        <td><%= event.start %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<h2>Listing blogs</h2>
+
+<table>
+  <thead>
+    <tr>
+    <th></th>
+      <th>Title</th>
+      <th>Content</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @blogs.each do |blog| %>
+      <tr>
+        <td><%= image_tag blog.image.url(:thumb) %></td>
+        <td><%= blog.title %></td>
+        <td><%= blog.content %></td>
+        <td><%= link_to 'Show', blog %></td>
+        <td><%= link_to 'Edit', edit_blog_path(blog) %></td>
+        <td><%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+
+
