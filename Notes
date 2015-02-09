@@ -1,5 +1,7 @@
 work on that delete comment stuff
 
+membership leads to a membership about page which has a kitabbed table that also lists the members and has a writeboard which is kinda a forum. so i gues yeah, we shal create the forum later on.
+
 change the before action for jobs to ask you to authenticate first through sign in through gmail, fb or your membership details
 
 

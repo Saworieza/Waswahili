@@ -1,10 +1,10 @@
 <h3>Swahili Box Stats</h3>
 <p>
-    <%# some count formula counting all events and then giving a number and linking to =>%><%= link_to "Total Events"%><br>
-    <%# some count formula counting all jobs and then giving a number and linking to =>%><%= link_to "Total Jobs"%><br>
-    <%# some count formula counting all members and then giving a number and linking to =>%><%= link_to "Total Members"%><br>
-    <%# some count formula counting all companies and then giving a number and linking to =>%><%= link_to "Total companies"%><br>
-    <%# some count formula counting all posts and then giving a number and linking to =>%><%= link_to "Total Blog Pots"%><br>
+    <%= @events.count %> <%= link_to "Total Events", events_path%><br>
+    <%= @jobs.count %> <%= link_to "Total Jobs"%><br>
+    <%= @members.count %> <%= link_to "Total Members"%><br>
+    <%#= @companies.count %><%= link_to "Total companies"%><br> <%# not yet created a page for them%>
+    <%= @blogs.count %> <%= link_to "Total Blog Posts"%><br>
 </p>
 <h3><%= link_to 'MEMBERSHIPS', members_path %></h3>
 <h3><%= link_to 'POST A JOB', jobs_path %></h3>

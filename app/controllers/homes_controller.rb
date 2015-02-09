@@ -5,6 +5,7 @@ class HomesController < ApplicationController
   # GET /homes.json
   def index
     @homes = Home.all
+    @members = Member.all #to enable the home view to count the members
     @events = Event.order('created_at DESC').limit(3) #change the number to a suitable number. i am thinking three
     @blogs = Blog.order('created_at DESC').limit(4) #its either this or i change it to blog.last coz these watu wa coast can be lazy at times. and as the ihub site has 4 so i have four
     @jobs = Job.order('created_at DESC').limit(4)#whetever the others are saying
