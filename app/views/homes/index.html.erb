@@ -7,7 +7,7 @@
     <%# some count formula counting all posts and then giving a number and linking to =>%><%= link_to "Total Blog Pots"%><br>
 </p>
 <h3><%= link_to 'MEMBERSHIPS', members_path %></h3>
-<h3><%= link_to 'POSTS A JOB', members_path %></h3>
+<h3><%= link_to 'POST A JOB', jobs_path %></h3>
 
 
 <h3>Events Board</h3>
@@ -25,7 +25,16 @@
   </tbody>
 </table>
 
-<br>
+<h3>Jobs Board</h3>
+<tbody>
+    <% @jobs.each do |job| %>
+      <tr>
+        <td><%= image_tag job.image.url(:thumb) %></td>
+        <td><%= link_to (job.title), jobs_path %></td>
+      </tr>
+    <% end %>
+  </tbody>
+
 <h2>Listing blogs</h2>
 
 <table>
@@ -42,11 +51,8 @@
     <% @blogs.each do |blog| %>
       <tr>
         <td><%= image_tag blog.image.url(:thumb) %></td>
-        <td><%= blog.title %></td>
-        <td><%= blog.content %></td>
-        <td><%= link_to 'Show', blog %></td>
-        <td><%= link_to 'Edit', edit_blog_path(blog) %></td>
-        <td><%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to (blog.title), blog %></td>
+        <td><%= truncate(strip_tags(blog.content), length: 150) %></td>
       </tr>
     <% end %>
   </tbody>

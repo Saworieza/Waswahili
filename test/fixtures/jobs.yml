@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  description: MyText
+  how_to_apply: MyText
+  deadline: 2015-02-09
+  category: MyString
+  type: 
+  company_name: MyString
+  logo: MyString
+  country: MyString
+  city: MyString
+  website: MyString
+
+two:
+  title: MyString
+  description: MyText
+  how_to_apply: MyText
+  deadline: 2015-02-09
+  category: MyString
+  type: 
+  company_name: MyString
+  logo: MyString
+  country: MyString
+  city: MyString
+  website: MyString
