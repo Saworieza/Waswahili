@@ -1,13 +1,13 @@
 <h3>Swahili Box Stats</h3>
 <p>
     <%= @events.count %> <%= link_to "Total Events", events_path%><br>
-    <%= @jobs.count %> <%= link_to "Total Jobs"%><br>
-    <%= @members.count %> <%= link_to "Total Members"%><br>
+    <%= @jobs.count %> <%= link_to "Total Jobs", jobs_path%><br>
+    <%= @members.count %> <%= link_to "Total Members", members_path%><br>
     <%#= @companies.count %><%= link_to "Total companies"%><br> <%# not yet created a page for them%>
-    <%= @blogs.count %> <%= link_to "Total Blog Posts"%><br>
+    <%= @blogs.count %> <%= link_to "Total Blog Posts", blogs_path %><br>
 </p>
 <h3><%= link_to 'MEMBERSHIPS', members_path %></h3>
-<h3><%= link_to 'POST A JOB', jobs_path %></h3>
+<h3><%= link_to 'POST A JOB', new_job_path %></h3>
 
 
 <h3>Events Board</h3>
@@ -16,7 +16,7 @@
   <tbody> <%# as per ihub. there is just the event name and dates and the name is truncated at some point%>
     <% @events.each do |event| %>
       <tr>
-        <td><%= link_to (event.name), event %></td>
+        <td><%= link_to (truncate(strip_tags(event.name), length: 45)), event %></td>
         <td><%= event.location %></td>
         <td><%= event.date %></td><!-- somthing is seriously awful about thsi format, work on it-->
         <td><%= event.start %></td>
@@ -29,8 +29,7 @@
 <tbody>
     <% @jobs.each do |job| %>
       <tr>
-        <td><%= image_tag job.image.url(:thumb) %></td>
-        <td><%= link_to (job.title), jobs_path %></td>
+        <td><%= link_to (truncate(strip_tags(job.title), length: 55)), jobs_path %></td>
       </tr>
     <% end %>
   </tbody>
@@ -51,7 +50,7 @@
     <% @blogs.each do |blog| %>
       <tr>
         <td><%= image_tag blog.image.url(:thumb) %></td>
-        <td><%= link_to (blog.title), blog %></td>
+        <td><%= link_to (truncate(strip_tags(blog.title), length: 55)), blog %></td>
         <td><%= truncate(strip_tags(blog.content), length: 150) %></td>
       </tr>
     <% end %>
