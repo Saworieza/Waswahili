@@ -3,6 +3,7 @@
 <table>
   <thead>
     <tr>
+      <th></th>
       <th>Name</th>
       <th>Location</th>
       <th>About</th>
@@ -17,17 +18,12 @@
   <tbody>
     <% @events.each do |event| %>
       <tr>
-        <td><%= image_tag event.image.url(:thumb) %></td>
+        <td><%= link_to (image_tag event.image.url(:medium)), event %></td>
         <td><%= event.name %></td>
         <td><%= event.location %></td>
-        <td><%= event.about %></td>
         <td><%= event.date %></td>
         <td><%= event.start %></td>
         <td><%= event.end %></td>
-        <td><%= event.charge %></td>
-        <td><%= link_to 'Show', event %></td>
-        <td><%= link_to 'Edit', edit_event_path(event) %></td>
-        <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

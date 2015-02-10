@@ -2,8 +2,15 @@ work on that delete comment stuff
 
 membership leads to a membership about page which has a kitabbed table that also lists the members and has a writeboard which is kinda a forum. so i gues yeah, we shal create the forum later on.
 
-change the before action for jobs to ask you to authenticate first through sign in through gmail, fb or your membership details
+hizo statistic transfer them from the home page index to layouts. this is to ease the transfer of page to page information.
 
+
+make the meber registration go to sig up page which then redirects you to fill the sign in page
+since my images are bigger than ihubs, we shall have to change the format a little bit. so that we can retain  the medium size
 
 to commit
-added about page
+
+fixed the login with username or password and now it allows you to login with any
+the username is not case sensitive
+clamped the index for members to swho name and technical bucket only
+clamped the index for events to show just the event name times and date

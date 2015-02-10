@@ -30,6 +30,44 @@
 	<p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
+    <aside>
+    	<h3>Swahili Box Stats</h3>
+<p>
+    <%= @events.count %> <%= link_to "Total Events", events_path%><br>
+    <%= @jobs.count %> <%= link_to "Total Jobs", jobs_path%><br>
+    <%= @members.count %> <%= link_to "Total Members", members_path%><br>
+    <%#= @companies.count %><%= link_to "Total companies"%><br> <%# not yet created a page for them%>
+    <%= @blogs.count %> <%= link_to "Total Blog Posts", blogs_path %><br>
+</p>
+<h3><%= link_to 'MEMBERSHIPS', members_path %></h3>
+<h3><%= link_to 'POST A JOB', new_job_path %></h3>
+
+
+<h3>Events Board</h3>
+
+<table>
+  <tbody> <%# as per ihub. there is just the event name and dates and the name is truncated at some point%>
+    <% @events.each do |event| %>
+      <tr>
+        <td><%= link_to (truncate(strip_tags(event.name), length: 45)), event %></td>
+        <td><%= event.location %></td>
+        <td><%= event.date %></td><!-- somthing is seriously awful about thsi format, work on it-->
+        <td><%= event.start %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<h3>Jobs Board</h3>
+<tbody>
+    <% @jobs.each do |job| %>
+      <tr>
+        <td><%= link_to (truncate(strip_tags(job.title), length: 55)), jobs_path %></td>
+      </tr>
+    <% end %>
+  </tbody>
+    </aside>
+
 <%= yield %>
 
 </body>

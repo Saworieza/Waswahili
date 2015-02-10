@@ -16,16 +16,10 @@
   <tbody>
     <% @members.each do |member| %>
       <tr>
-        <td><%= image_tag member.image.url(:thumb) %></td>
+        <td><%= link_to (image_tag member.image.url(:thumb)), member %></td>
         <td><%= member.first_name %></td>
         <td><%= member.last_name %></td>
-        <td><%= member.technical_bucket %></td>
-        <td><%= member.about %></td>
-        <td><%= member.residence %></td>
-        <td><%= member.nationality %></td>
-        <td><%= link_to 'Show', member %></td>
-        <td><%= link_to 'Edit', edit_member_path(member) %></td>
-        <td><%= link_to 'Destroy', member, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= member.technical_bucket %></td>        
       </tr>
     <% end %>
   </tbody>
