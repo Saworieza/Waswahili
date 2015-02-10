@@ -11,6 +11,7 @@
 	<p class="navbar-text pull-right">
 	<nav><%#later on move them maybe?%>
 		<%= link_to 'Home', root_path %>
+		<%= link_to 'About', about_index_path %>
 		<%= link_to 'Team', teams_path %>
 		<%= link_to 'Community', members_path %>
 		<%= link_to 'Events', events_path %>
@@ -26,6 +27,11 @@
   		<%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
 	<% end %>
 	</nav>
+	<p>
+		<a href="https://twitter.com/swahilibox">Twitter</a>
+		<a href="https://www.facebook.com/SwahiliBox">Facebook</a>
+		<a href="https://www.facebook.com/SwahiliBox">Flicker</a>
+	</p>
 	</p>
 	<p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>

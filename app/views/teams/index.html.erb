@@ -3,9 +3,11 @@
 <table>
   <thead>
     <tr>
+      <th></th>
       <th>Name</th>
       <th>Position</th>
       <th>Twitter</th>
+      <th>Category</th> 
       <th>About</th>
       <th colspan="3"></th>
     </tr>
@@ -18,15 +20,16 @@
         <td><%= team.name %></td>
         <td><%= team.position %></td>
         <td><%= team.twitter %></td>
-        <td><%= team.about %></td>
-        <td><%= link_to 'Show', team %></td>
-        <td><%= link_to 'Edit', edit_team_path(team) %></td>
-        <td><%= link_to 'Destroy', team, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= team.category %></td>
+        <td><%= truncate(strip_tags(team.about), length: 100)%></td>
+        <!-- change this to be managed by admin only through permisions. otherwise kila mtu atataka kuwa team member. as if hii ni equity, ati demo meba. and actually, the index has no show. just a read more for truncated text. so thats why it aint here
+        <!--<td><%= link_to 'Edit', edit_team_path(team) %></td>-->
+        <!--<td><%= link_to 'Destroy', team, method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
+<!-- admin thing here-->
 <%= link_to 'New Team', new_team_path %>

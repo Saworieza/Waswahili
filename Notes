@@ -1,16 +1,24 @@
 work on that delete comment stuff
 
-membership leads to a membership about page which has a kitabbed table that also lists the members and has a writeboard which is kinda a forum. so i gues yeah, we shal create the forum later on.
+IMPORTANT!!!
+before_filter :authenticate_user!, 
+              :only => [:new, :edit, :create, :update, :delete]
 
-hizo statistic transfer them from the home page index to layouts. this is to ease the transfer of page to page information.
 
+in ihubs site. community leads to its own site which is essentially one that says what ihub does, memberships, featured events, feutured blogs etc. essentially. its the home page all over again. lets change that to our own. one that says what we do as a community, our member ships, a select of random community members the jobs board twitter and our partners hapo chini.
 
-make the meber registration go to sig up page which then redirects you to fill the sign in page
+note that the current community leads to members page which we shall find a home for shortly
+
+add a claendar to the events page. you know how the events calendar looks like
+
+membership leads to a membership about page which has a kitabbed table that also lists the members and has a writeboard which is kinda a forum. so i gues yeah, we shall create the forum later on.
+
+make the member registration go to sign up page which then redirects you to fill the sign in page
 since my images are bigger than ihubs, we shall have to change the format a little bit. so that we can retain  the medium size
 
 to commit
 
-fixed the login with username or password and now it allows you to login with any
-the username is not case sensitive
-clamped the index for members to swho name and technical bucket only
-clamped the index for events to show just the event name times and date
+added a category field to teams to help with selective filtering
+added 
+
+
