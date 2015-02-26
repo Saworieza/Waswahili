@@ -61,7 +61,7 @@ ActiveRecord::Schema.define(version: 20150210084722) do
     t.text     "how_to_apply"
     t.date     "deadline"
     t.string   "category"
-    t.string   "type"
+    t.string   "job_type"
     t.string   "company_name"
     t.string   "logo"
     t.string   "country"
