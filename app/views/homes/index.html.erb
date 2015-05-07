@@ -23,7 +23,7 @@
       <tr>
         <td><%= link_to (truncate(strip_tags(event.name), length: 45)), event %></td>
         <td><%= event.location %></td>
-        <td><%= event.date %></td><!-- somthing is seriously awful about thsi format, work on it-->
+        <td><%= event.date.strftime('%d-%b-%Y') %></td>
         <td><%= event.start %></td>
       </tr>
     <% end %>
